@@ -19,7 +19,7 @@ curl -o cft https://storage.googleapis.com/cft-cli/latest/cft-linux-amd64
 chmod +x cft
 
 # Clone the policy library
-git clone --branch feature/gcp-lables https://github.com/ericyz/policy-library.git
+git clone --branch feature/gcp-labels https://github.com/ericyz/policy-library.git
 ```
 
 ## Create folders
@@ -55,8 +55,6 @@ gsutil iam ch user:$USER_EMAIL:objectViewer gs://$BUCKET
 
 ## CAI Export
 ```
-gcloud asset export --organization $ORG_ID --output-path gs://$BUCKET/iam_inventory.json --content-type iam-policy --billing-project $PROJECT
-
 gcloud asset export --organization $ORG_ID --output-path gs://$BUCKET/resource_inventory.json --content-type resource --billing-project $PROJECT
 ```
 
